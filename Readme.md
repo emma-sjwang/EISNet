@@ -1,5 +1,5 @@
 # Learning from Extrinsic and Intrinsic Supervisions for Domain Generalization
-by [Shujun Wang](www.cse.cuhk.edu.hk/~sjwang), [Lequan Yu](https://yulequan.github.io/), Caizi Li, [Chi-Wing Fu](http://www.cse.cuhk.edu.hk/~cwfu/), and [Pheng-Ann Heng](http://www.cse.cuhk.edu.hk/~pheng/).
+by [Shujun Wang](https://www.cse.cuhk.edu.hk/~sjwang), [Lequan Yu](https://yulequan.github.io/), Caizi Li, [Chi-Wing Fu](http://www.cse.cuhk.edu.hk/~cwfu/), and [Pheng-Ann Heng](http://www.cse.cuhk.edu.hk/~pheng/).
 
 ## Introduction
 This repository is for our ECCV2020 paper '[Learning from Extrinsic and Intrinsic Supervisions for Domain Generalization](https://openreview.net/pdf?id=M0OvYG0VS9)'.
