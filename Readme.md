@@ -24,7 +24,7 @@ The framework of the proposed EISNet for domain generalization. We train a featu
 
 
 ## Usage
-1. Clone the repository and download the dataset [PACS](https://drive.google.com/drive/folders/0B6x7gtvErXgfUU1WcGY5SzdwZVk) and VLCS into folder `EISNet/Dataset`.
+1. Clone the repository and download the dataset [PACS](https://drive.google.com/drive/folders/0B6x7gtvErXgfUU1WcGY5SzdwZVk) and [VLCS](http://www.mediafire.com/file/7yv132lgn1v267r/vlcs.tar.gz/file) into folder `EISNet/Dataset`.
 > If you have already put the dataset into other paths, you need to change path in txt files in `EISNet/code/data/txt_lists/*.txt`.
 2. Train the model.
 
