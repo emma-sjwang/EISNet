@@ -274,10 +274,7 @@ class FunctionNegativeKTripletSelectorFromMomentum(TripletSelector):
             mom_embeddings = mom_embeddings.cpu()
 
         distance_matrix = pdist2(embeddings, emc_embeddings).cpu()
-        # print(distance_matrix.sum())
-        # distance_matrix = distance_matrix.cpu()
         distance_matrix2 = pdist2(embeddings, mom_embeddings).cpu()
-        # print(distance_matrix2.sum())
         mom_labels = mom_labels.long().cpu().data.numpy()
 
         labels = labels.cpu().data.numpy()
@@ -289,32 +286,18 @@ class FunctionNegativeKTripletSelectorFromMomentum(TripletSelector):
             if len(label_indices) < 2:
                 continue
             negative_indices = np.where(np.logical_not((mom_labels == label)))[0]
-            # print('len negative_indices: ', len(negative_indices))
             anchor_positives = list(combinations(label_indices, 2))  # All anchor-positive pairs
             anchor_positives = np.array(anchor_positives)
-            # anchor_positives = np.array(range(len(embeddings)))
-            # print(anchor_positives.shape, negative_indices.shape)
 
             ap_distances = distance_matrix[anchor_positives[:, 0], anchor_positives[:, 1]]
-            # print(ap_distances.shape)
             for anchor_positive, ap_distance in zip(anchor_positives, ap_distances):
-                # print(anchor_positive.shape)
                 loss_values = ap_distance - distance_matrix2[torch.LongTensor(np.array([anchor_positive[0]])), torch.LongTensor(negative_indices)] + self.margin
-                # print(ap_distance, distance_matrix2[
-                #     torch.LongTensor(np.array([anchor_positive[0]])), torch.LongTensor(negative_indices)], loss_values)
-
                 loss_values = loss_values.data.cpu().numpy()
                 hard_negative = self.negative_selection_fn(loss_values)
                 if hard_negative is not None:
                     for i in range(hard_negative.shape[0]):
                         hard_negative_ = negative_indices[hard_negative[i]]
                         triplets.append([anchor_positive[0], anchor_positive[1], hard_negative_])
-
-        # if len(triplets) == 0:
-        #     for i in range(self.k):
-        #         triplets.append([anchor_positive[0], anchor_positive[1], negative_indices[i]])
-
-
         triplets = np.array(triplets)
 
         return torch.LongTensor(triplets)
