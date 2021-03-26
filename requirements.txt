@@ -1,5 +1,5 @@
 tensorboard==2.1.0
-PyYAML==5.1
+PyYAML==5.4
 tqdm==4.43.0
 numpy==1.18.0
 
