@@ -3,7 +3,7 @@ by [Shujun Wang](https://www.cse.cuhk.edu.hk/~sjwang), [Lequan Yu](https://yuleq
 
 ## Introduction
 This repository is for our ECCV2020 paper '[Learning from Extrinsic and Intrinsic Supervisions for Domain Generalization](https://link.springer.com/chapter/10.1007/978-3-030-58545-7_10)'.
-![cellgraph](https://emmaw8.github.io/project_img/EISNet.png)
+![cellgraph](https://emma-sjwang.github.io/project_img/EISNet.png)
 The framework of the proposed EISNet for domain generalization. We train a feature Encoder $f$ for discriminative and transferable feature extraction and a classifier for object recognition. Two complementary tasks, a momentum metric learning task and a self-supervised auxiliary task, are introduced to prompt general feature learning. We maintain a momentum updated Encoder (MuEncoder) to generate momentum updated embeddings stored in a large memory bank. Also, we design a $K$-hard negative selector to locate the informative hard triplets from the memory bank to calculate the triplet loss. The auxiliary self-supervised task predicts the order of patches within an image.
 
 ## Requirements
